@@ -10,7 +10,7 @@
 
 // ── MAIN-world injection ──────────────────────────────────────────────────────
 // Must be entirely self-contained (no closures over extension scope).
-// The canonical source + unit tests live in src/readFiberAndOpen.js — keep in sync.
+// The canonical source + unit tests live in readFiberAndOpen.js — keep in sync.
 
 function readFiberAndOpen(attr, projectRoot) {
   const el = document.querySelector(`[${attr}]`);
