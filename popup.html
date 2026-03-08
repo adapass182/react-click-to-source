@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Click-to-Source</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 280px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 13px;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .logo {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .title {
+      font-weight: 600;
+      font-size: 14px;
+      color: #f1f5f9;
+    }
+
+    .subtitle {
+      font-size: 11px;
+      color: #64748b;
+    }
+
+    .main {
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Inspect toggle button */
+    #toggleBtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    #toggleBtn:active { transform: scale(0.98); }
+
+    #toggleBtn.off {
+      background: #1e293b;
+      color: #94a3b8;
+      border: 1px solid #334155;
+    }
+
+    #toggleBtn.off:hover { background: #253347; color: #e2e8f0; }
+
+    #toggleBtn.on {
+      background: #2563eb;
+      color: #fff;
+      border: 1px solid #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59,130,246,0.25);
+    }
+
+    #toggleBtn.on:hover { background: #1d4ed8; }
+
+    /* Hint text */
+    .hint {
+      font-size: 11px;
+      color: #475569;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #475569;
+      font-weight: 600;
+    }
+
+    .row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .row input {
+      flex: 1;
+      padding: 6px 8px;
+      background: #0c1524;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      color: #e2e8f0;
+      font-family: ui-monospace, monospace;
+      font-size: 11px;
+      outline: none;
+      min-width: 0;
+    }
+
+    .row input:focus { border-color: #3b82f6; }
+    .row input::placeholder { color: #334155; }
+
+    .row button {
+      padding: 6px 10px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      color: #94a3b8;
+      font-size: 11px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .row button:hover { background: #253347; color: #e2e8f0; }
+
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 0; }
+
+    .footer {
+      padding: 10px 16px;
+      border-top: 1px solid #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: #22c55e;
+      box-shadow: 0 0 4px #22c55e80;
+    }
+
+    .footer-text { color: #475569; font-size: 11px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="logo">⚛</span>
+    <div>
+      <div class="title">React Click-to-Source</div>
+      <div class="subtitle">Open components in Cursor</div>
+    </div>
+  </div>
+
+  <div class="main">
+    <button id="toggleBtn" class="off">
+      <span id="btnIcon">⊙</span>
+      <span id="btnLabel">Start Inspecting</span>
+    </button>
+
+    <p class="hint" id="hint">Click to activate, then click any component on the page.</p>
+
+    <hr class="divider" />
+
+    <div class="section">
+      <div class="section-label">Project Root</div>
+      <div class="row">
+        <input id="projectRoot" type="text" placeholder="/Users/you/Code/myapp" spellcheck="false" />
+        <button id="saveRoot">Save</button>
+      </div>
+      <p id="rootHint" style="font-size:11px;color:#475569;line-height:1.5">
+        Required for React 19. Absolute path to your project folder.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="dot"></div>
+    <span class="footer-text">Opens via <code style="color:#64748b">cursor://</code> — no server needed</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

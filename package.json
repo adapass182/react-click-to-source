@@ -1,0 +1,14 @@
+{
+  "name": "react-click-to-source-server",
+  "version": "1.0.0",
+  "description": "Local server for the React Click-to-Source Chrome extension",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "canvas": "^3.2.1"
+  }
+}
