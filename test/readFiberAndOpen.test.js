@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { readFiberAndOpen } from '../src/readFiberAndOpen.js';
+import { readFiberAndOpen } from '../readFiberAndOpen.js';
 
 const CLICK = 'data-rcts-click';
 const HOVER = 'data-rcts-hover';
