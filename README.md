@@ -2,7 +2,7 @@
 
 A Chrome extension that lets you click any React component on a live page and jump directly to its source file in [Cursor](https://cursor.sh) — no code changes, no build plugins required.
 
-![demo](https://github.com/user-attachments/assets/d7193614-39ff-4efb-9151-51d02a6dac52)
+![demo](https://github.com/user-attachments/assets/779d6e77-c926-4cc8-8f13-7d38511a6c9a)
 
 ---
 
