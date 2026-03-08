@@ -1,14 +1,16 @@
 {
-  "name": "react-click-to-source-server",
+  "name": "react-click-to-source",
   "version": "1.0.0",
-  "description": "Local server for the React Click-to-Source Chrome extension",
+  "description": "Chrome extension — click React components to open them in Cursor",
   "scripts": {
-    "start": "node server.js"
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
-  "dependencies": {
-    "canvas": "^3.2.1"
+  "devDependencies": {
+    "jsdom": "^25.0.1",
+    "vitest": "^3.0.0"
   }
 }
