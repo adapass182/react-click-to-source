@@ -2,8 +2,7 @@
 
 A Chrome extension that lets you click any React component on a live page and jump directly to its source file in [Cursor](https://cursor.sh) — no code changes, no build plugins required.
 
-![demo](docs/demo.gif)
-<!-- Replace with an actual screen recording -->
+![demo](docs/demo.mov)
 
 ---
 
@@ -59,7 +58,7 @@ Chrome's isolated-world content scripts cannot read React's fiber expando proper
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/react-click-to-source.git
+   git clone https://github.com/adapass182/react-click-to-source.git
    ```
 
 2. Open Chrome and go to `chrome://extensions`
@@ -143,4 +142,4 @@ After making changes to the extension, go to `chrome://extensions` and click the
 
 ## License
 
-MIT
+[MIT](LICENSE)
